@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean Code Report - Naming Violations</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Loading State -->
+    <div class="loading" id="loading">
+      <div>Loading report data...</div>
+    </div>
+
+    <!-- Error State -->
+    <div class="error-message" id="error-message" style="display: none;"></div>
+
+    <!-- Report Selector -->
+    <div class="report-selector" id="report-selector" style="display: none;">
+      <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem;">Select Report</h3>
+      <div class="report-list" id="report-list">
+        <!-- Reports will be injected here -->
+      </div>
+    </div>
+
+
+    <!-- Summary Cards -->
+    <div class="summary-grid" id="summary-grid" style="display: none;">
+      <div class="summary-card">
+        <div class="summary-header">
+          <span class="summary-title">Total Violations</span>
+          <span class="severity-badge severity-high" id="total-violations-badge">0</span>
+        </div>
+        <div class="summary-total" id="total-violations">0</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-header">
+          <span class="summary-title">High Severity</span>
+          <span class="severity-badge severity-high">15</span>
+        </div>
+        <div class="summary-total" style="color: var(--high-color)" id="high-severity">0</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-header">
+          <span class="summary-title">Medium Severity</span>
+          <span class="severity-badge severity-medium">8</span>
+        </div>
+        <div class="summary-total" style="color: var(--medium-color)" id="medium-severity">0</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-header">
+          <span class="summary-title">Low Severity</span>
+          <span class="severity-badge severity-low">2</span>
+        </div>
+        <div class="summary-total" style="color: var(--low-color)" id="low-severity">0</div>
+      </div>
+    </div>
+
+    <!-- Filters Section -->
+    <div class="filters" id="filters" style="display: none;">
+      <div class="filters-header">
+        <h3 style="font-size: 1.1rem; font-weight: 700;">Filter Violations</h3>
+        <div style="font-size: 0.9rem; color: var(--text-secondary);">
+          Showing <span id="filtered-count">0</span> of <span id="total-count">0</span> violations
+        </div>
+      </div>
+      <div class="search-box">
+        <input type="text" class="search-input" id="search-input"
+          placeholder="Search violations by message, code, or category...">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-severity="all">All</button>
+          <button class="filter-btn" data-severity="high">High</button>
+          <button class="filter-btn" data-severity="medium">Medium</button>
+          <button class="filter-btn" data-severity="low">Low</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Violations Table -->
+    <div class="violations-table" id="violations-table" style="display: none;">
+      <div class="table-header">
+        <div>Line</div>
+        <div>Severity</div>
+        <div>Category</div>
+        <div>Message</div>
+
+      </div>
+      <div class="table-body" id="table-body">
+        <!-- Violations will be injected here -->
+      </div>
+    </div>
+  </div>
+
+
+  <script src="/assets/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "clean-code-report-server",
+  "version": "1.0.0",
+  "description": "Node.js server for serving clean code reports",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "stop": "pkill -f \"node.*server.js\""
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.9"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "clean-code",
+    "report",
+    "nodejs",
+    "express"
+  ],
+  "author": "Clean Code Rules",
+  "license": "MIT"
+}
